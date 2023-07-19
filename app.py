@@ -8,7 +8,7 @@ app = Flask(__name__)
 def  bienvenido():
     return 'Hola mundo bigdateros, desde Flask'
 
-@app.route('/webhook', methods=['GET'])
+@app.route('/webhook/', methods=['GET'])
 def verificar_token():
     try:
         token = request.args.get('hub.verify_token')
