@@ -21,7 +21,7 @@ def verificar_token():
     except Exception as e:
         return e,403
     
-@app.route('/webhook', methods=['POST'])
+@app.route('/webhook/', methods=['POST'])
 def recibir_mensajes():
     try:
         body = request.get_json()
