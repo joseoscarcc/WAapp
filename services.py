@@ -3,6 +3,12 @@ import sett
 import json
 import time
 
+def replace_start(s):
+    if s.startswith("521"):
+        return "52" + s[3:]
+    else:
+        return s
+    
 def obtener_Mensaje_whatsapp(message):
     if 'type' not in message :
         text = 'mensaje no reconocido'
