@@ -306,12 +306,14 @@ def administrar_chatbot(text,number, messageId, name):
         enviar_Mensaje_whatsapp(textMessage_03)
         time.sleep(3)
 
-        body = "¿Te gustaría programar un pedido?"
-        footer = "Equipo Jojuma"
-        options = ["✅ Sí, necesito producto", "No, gracias." ]
+        textMessage_03 = text_Message(number,"¿Te gustaría hacer un pedido?")
+        enviar_Mensaje_whatsapp(textMessage_03)
+        # body = "¿Te gustaría programar un pedido?"
+        # footer = "Equipo Jojuma"
+        # options = ["✅ Sí, necesito producto", "No, gracias." ]
 
-        replyButtonData = buttonReply_Message(number, options, body, footer, "sed7",messageId)
-        list.append(replyButtonData)
+        # replyButtonData = buttonReply_Message(number, options, body, footer, "sed7",messageId)
+        # list.append(replyButtonData)
     else :
         data = text_Message(number,"Lo siento, no entendí lo que dijiste. ¿Quieres que te ayude con alguna de estas opciones?")
         list.append(data)
