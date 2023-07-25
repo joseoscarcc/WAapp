@@ -227,9 +227,9 @@ def administrar_chatbot(text,number, messageId, name):
     time.sleep(2)
 
     if "hola" in text:
-        body = "¡Hola! 👋 Bienvenido a Bigdateros. ¿Cómo podemos ayudarte hoy?"
-        footer = "Equipo Bigdateros"
-        options = ["✅ servicios", "📅 agendar cita"]
+        body = "¡Hola! 👋 Bienvenido a Distribución Combustible. ¿Cómo podemos ayudarte hoy?"
+        footer = "Equipo JOJUMA"
+        options = ["✅ servicios", "💰 precios" , "📅 cita"]
 
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed1",messageId)
         replyReaction = replyReaction_Message(number, messageId, "🫡")
@@ -237,8 +237,8 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(replyButtonData)
     elif "servicios" in text:
         body = "Tenemos varias áreas de consulta para elegir. ¿Cuál de estos servicios te gustaría explorar?"
-        footer = "Equipo Bigdateros"
-        options = ["Analítica Avanzada", "Migración Cloud", "Inteligencia de Negocio"]
+        footer = "Equipo JOJUMA"
+        options = ["Entrega combustible", "Marca JOJUMA en tu estación", "Inteligencia de Negocio"]
 
         listReplyData = listReply_Message(number, options, body, footer, "sed2",messageId)
         sticker = sticker_Message(number, get_media_id("perro_traje", "sticker"))
@@ -247,7 +247,7 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(sticker)
     elif "inteligencia de negocio" in text:
         body = "Buenísima elección. ¿Te gustaría que te enviara un documento PDF con una introducción a nuestros métodos de Inteligencia de Negocio?"
-        footer = "Equipo Bigdateros"
+        footer = "Equipo Jojuma"
         options = ["✅ Sí, envía el PDF.", "⛔ No, gracias"]
 
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed3",messageId)
@@ -265,14 +265,14 @@ def administrar_chatbot(text,number, messageId, name):
         time.sleep(3)
 
         body = "¿Te gustaría programar una reunión con uno de nuestros especialistas para discutir estos servicios más a fondo?"
-        footer = "Equipo Bigdateros"
+        footer = "Equipo Jojuma"
         options = ["✅ Sí, agenda reunión", "No, gracias." ]
 
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed4",messageId)
         list.append(replyButtonData)
     elif "sí, agenda reunión" in text :
         body = "Estupendo. Por favor, selecciona una fecha y hora para la reunión:"
-        footer = "Equipo Bigdateros"
+        footer = "Equipo jojuma"
         options = ["📅 10: mañana 10:00 AM", "📅 7 de junio, 2:00 PM", "📅 8 de junio, 4:00 PM"]
 
         listReply = listReply_Message(number, options, body, footer, "sed5",messageId)
@@ -288,6 +288,30 @@ def administrar_chatbot(text,number, messageId, name):
     elif "no, gracias." in text:
         textMessage = text_Message(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. Recuerda que también ofrecemos material gratuito para la comunidad. ¡Hasta luego! 😊")
         list.append(textMessage)
+    elif "precios" in text :
+        textMessage = text_Message(number,"Con gusto, por favor espera un momento.")
+
+        enviar_Mensaje_whatsapp(textMessage)
+        time.sleep(3)
+
+        textMessage_01 = text_Message(number,"Precio Regular: $22.11.")
+        enviar_Mensaje_whatsapp(textMessage_01)
+        time.sleep(3)
+
+        textMessage_02 = text_Message(number,"Precio Premium: $23.69.")
+        enviar_Mensaje_whatsapp(textMessage_02)
+        time.sleep(3)
+
+        textMessage_03 = text_Message(number,"Precio Diésel: $23.97.")
+        enviar_Mensaje_whatsapp(textMessage_03)
+        time.sleep(3)
+
+        body = "¿Te gustaría programar un pedido?"
+        footer = "Equipo Jojuma"
+        options = ["✅ Sí, necesito producto", "No, gracias." ]
+
+        replyButtonData = buttonReply_Message(number, options, body, footer, "sed7",messageId)
+        list.append(replyButtonData)
     else :
         data = text_Message(number,"Lo siento, no entendí lo que dijiste. ¿Quieres que te ayude con alguna de estas opciones?")
         list.append(data)
