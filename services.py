@@ -235,9 +235,10 @@ def administrar_chatbot(text,number, messageId, name):
         replyReaction = replyReaction_Message(number, messageId, "🫡")
         list.append(replyReaction)
         list.append(replyButtonData)
-    elif "Quiero la guia para entender los seguros de vida" in text:
-        textMessage = text_Message(number,"Con gusto, por favor espera un momento.")
+    elif "quiero la guía para entender los seguros de vida" in text:
+        replyReaction = replyReaction_Message(number, messageId, "🫡")
 
+        textMessage = text_Message(number,"Con gusto, por favor espera un momento.")
         enviar_Mensaje_whatsapp(textMessage)
         time.sleep(3)
 
