@@ -235,16 +235,19 @@ def administrar_chatbot(text,number, messageId, name):
         replyReaction = replyReaction_Message(number, messageId, "🫡")
         list.append(replyReaction)
         list.append(replyButtonData)
-    elif "servicios" in text:
-        body = "Tenemos varias áreas de consulta para elegir. ¿Cuál de estos servicios te gustaría explorar?"
-        footer = "Equipo JOJUMA"
-        options = ["Entrega combustible", "Marca JOJUMA en tu estación", "Inteligencia de Negocio"]
+    elif "Quiero la guía para entender los seguros de vida" in text:
+        textMessage = text_Message(number,"Con gusto, por favor espera un momento.")
 
-        listReplyData = listReply_Message(number, options, body, footer, "sed2",messageId)
-        sticker = sticker_Message(number, get_media_id("perro_traje", "sticker"))
+        enviar_Mensaje_whatsapp(textMessage)
+        time.sleep(3)
 
-        list.append(listReplyData)
-        list.append(sticker)
+        document = document_Message(number, sett.document_url, "Listo 👍🏻", "Guía para entender los seguros de vida.pdf")
+        enviar_Mensaje_whatsapp(document)
+        time.sleep(3)
+
+        textMessage_02 = text_Message(number,"En estos momentos tenemos una promoción de meses sin intereses. ¿Te gustaría saber más?")
+        enviar_Mensaje_whatsapp(textMessage_02)
+        time.sleep(3)
     elif "inteligencia de negocio" in text:
         body = "Buenísima elección. ¿Te gustaría que te enviara un documento PDF con una introducción a nuestros métodos de Inteligencia de Negocio?"
         footer = "Equipo Jojuma"
