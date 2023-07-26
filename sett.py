@@ -21,4 +21,4 @@ stickers = {
     "gato_cansado": 1021308728970759
 }
 
-document_url = "xhttps://drive.google.com/uc?export=download&id=1PV57FZhz8u5BQV6kMKo-6T9ivKiRGHWm"
+document_url = "https://drive.google.com/uc?export=download&id=1PV57FZhz8u5BQV6kMKo-6T9ivKiRGHWm"
